@@ -26,8 +26,8 @@ class Decoder:
         # used as a reference 
         for i in range(0, len(self.binary_string), 7):
             temp_data = self.binary_string[i:i + 7]
-            sanitizeddata = helper.sanitize(temp_data)
-            decimal_data = helper.convert(sanitizeddata)
+            sanitized_data = helper.sanitize(temp_data)
+            decimal_data = helper.convert(sanitized_data)
             
             if decimal_data is not None:
                 if decimal_data == 7:
@@ -39,8 +39,8 @@ class Decoder:
 
         return str_data
 
-file = sys.argv
+args = sys.argv
 
-for i in file:
+for i in args:
     my_file = Decoder(i)
     print(my_file.decode())
